@@ -12,8 +12,13 @@ The state of handling responsive images with regards to web development is in fl
 ##Dependencies##
 The default configuration and usage guidelines for Waldo are based on WordPress 4.4+ with Advanced Custom Fields 5.3+.
 
+##Configuration##
+Add the image sizes supported by your theme and their associated min-width media query values in the *waldo\_sizes* array found in *waldo.php*.
+
+*For more information on adding support for custom image sizes in WordPress, visit [this link](https://developer.wordpress.org/reference/functions/add_image_size/).*
+
 ##How to Use Waldo##
-1. Copy the contents of **waldo-master** to the root directory of your WordPress theme.
+1. Copy **waldo-master** over to your WordPress theme.
 2. Include *waldo.php* somewhere in your *functions.php* file.
 3. Enqueue *waldo.css* in your *functions.php* file. Ensure the root path of this file is the same as the root path of the theme directory.
 4. Integrate Waldo into your template files. For each template that is to utilize Waldo:
@@ -21,7 +26,7 @@ The default configuration and usage guidelines for Waldo are based on WordPress 
         ```php
         get_header();
 
-        $waldo = new Waldo;
+        $waldo = new Waldo();
         ```
     2. Declare global variable *$waldo\_styles* and assign the function *waldoSavedStyles()*. This fetches the saved styles array and stores them to the global variable.
         ```php
@@ -44,6 +49,10 @@ The default configuration and usage guidelines for Waldo are based on WordPress 
 
         get_footer();
         ```
+5. Preload your site cache or click through the pages that utilize the affected template(s) and refresh to view updated responsive image styles.
+
+##What it Does##
+Waldo dynamically generates styles for background images based on media queries and associated optimial image size. Waldo *only* sets the background-image property, any other styles may be included in the regular stylesheet for the site.
 
 ##Follow Us!##
 Follow [@paper_leaf](https://twitter.com/paper_leaf) on Twitter.
