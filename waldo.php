@@ -12,7 +12,7 @@
      * @package     Waldo
      * @author      Paper Leaf <info@paper-leaf.com>
      * @copyright   2016 Paper Leaf Design <http://www.paper-leaf.com>
-     * @license     https://github.com/paper-leaf/waldo/blob/LICENSE.txt  GNU General Public License - Version 3
+     * @license     https://github.com/paper-leaf/waldo/blob/master/LICENSE.txt  GNU General Public License - Version 3
      * @version     1.0
      * @link        https://github.com/paper-leaf/waldo
      *
