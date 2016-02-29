@@ -29,17 +29,18 @@ The default configuration and usage guidelines for Waldo are based on WordPress 
 
         $waldo = new Waldo;
 
-        global $waldo\_styles;
-        $waldo\_styles = $waldo->waldoSavedStyles();
+        global $waldo_styles;
+        $waldo_styles = $waldo->waldoSavedStyles();
         ```
     3. Before each background image instance where Waldo is to generate styles, get the Advanced Custom Field image object, and store to a variable. Build styles and save to array by calling the function *waldoStylesArray()*. Pass in the ACF image object, a unique name (string) for this image section, the saved styles array, and a unique class name (string) for this section.
         ```php
-        $image = get\_field('acf\_image\_name');
-        $waldo\_styles = $waldo->waldoStylesArray($image, 'unique-section-name', $waldo\_styles, 'unique-section-class-name');
+        $image = get\_field('acf\_image_name');
+
+        $waldo\_styles = $waldo->waldoStylesArray($image, 'unique-section-name', $waldo_styles, 'unique-section-class-name');
         ```
     4. Before WP *get\_footer();* call the function *waldoStyles()* to generate and save the updated *waldo.css* file.
         ```php
-        $waldo->waldoStyles($waldo\_styles);
+        $waldo->waldoStyles($waldo_styles);
 
         get_footer();
         ```
