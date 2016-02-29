@@ -1,7 +1,7 @@
 # README #
 
 ##What is Waldo?##
-Waldo is a dynamic responsive CSS background images extension for WordPress and other PHP-based applications that dynamically generates styles for full-cover background images using only CSS.
+Waldo is an extension for WordPress and other PHP-based applications that dynamically generates responsive CSS background image styles.
 
 ##Why Responsive Images?##
 Mobile-first web development is the industry standard these days, and images are one of the leading causes of page bloat and slow loading times, especially on mobile devices and cellular networks. When compressed and appropriately sized images are served, page size and load time decrease drastically.
@@ -15,7 +15,7 @@ The default configuration and usage guidelines for Waldo are based on WordPress 
 ##Configuration##
 Add the image sizes supported by your theme and their associated min-width media query values in the *waldo\_sizes* array found in *waldo.php*.
 
-*For more information on adding support for custom image sizes in WordPress, visit [this link](https://developer.wordpress.org/reference/functions/add_image_size/).*
+*For more information on adding support for custom image sizes in WordPress, visit [here](https://developer.wordpress.org/reference/functions/add_image_size/).*
 
 ##How to Use Waldo##
 1. Copy **waldo-master** over to your WordPress theme.
@@ -28,13 +28,11 @@ Add the image sizes supported by your theme and their associated min-width media
 
         $waldo = new Waldo();
         ```
-    2. Declare global variable *$waldo\_styles* and assign the function *waldoSavedStyles()*. This fetches the saved styles array and stores them to the global variable.
+    2. Set variable *$waldo\_styles* to the function *waldoSavedStyles()*. This fetches the saved styles array and stores it to the variable.
         ```php
         get_header();
 
         $waldo = new Waldo;
-
-        global $waldo_styles;
         $waldo_styles = $waldo->waldoSavedStyles();
         ```
     3. Before each instance where Waldo is to generate background image styles, get the Advanced Custom Field image object, and store to a variable. Build styles and save to array by calling the function *waldoStylesArray()*. Pass in the ACF image object, a unique name (string), the saved styles array, and a unique class name (string) for this section.
@@ -52,7 +50,7 @@ Add the image sizes supported by your theme and their associated min-width media
 5. Preload your site cache or click through the pages that utilize the affected template(s) and refresh to view updated responsive image styles.
 
 ##What it Does##
-Waldo dynamically generates styles for background images based on media queries and associated optimial image size. Waldo *only* sets the background-image property, any other styles may be included in the regular stylesheet for the site.
+Waldo dynamically generates styles for background images based on media queries and associated optimal image size. Waldo *only* sets the background-image property, any other styles may be included in the regular stylesheet for the site.
 
 ##Follow Us!##
 Follow [@paper_leaf](https://twitter.com/paper_leaf) on Twitter.
