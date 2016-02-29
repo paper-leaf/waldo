@@ -32,7 +32,7 @@ The default configuration and usage guidelines for Waldo are based on WordPress 
         global $waldo_styles;
         $waldo_styles = $waldo->waldoSavedStyles();
         ```
-    3. Before each background image instance where Waldo is to generate styles, get the Advanced Custom Field image object, and store to a variable. Build styles and save to array by calling the function *waldoStylesArray()*. Pass in the ACF image object, a unique name (string) for this image section, the saved styles array, and a unique class name (string) for this section.
+    3. Before each instance where Waldo is to generate background image styles, get the Advanced Custom Field image object, and store to a variable. Build styles and save to array by calling the function *waldoStylesArray()*. Pass in the ACF image object, a unique name (string), the saved styles array, and a unique class name (string) for this section.
         ```php
         $image = get_field('acf_image_field_name');
 
@@ -54,4 +54,6 @@ Follow [@paper_leaf](https://twitter.com/paper_leaf) on Twitter.
 *License: [GNU General Public License - Version 3](https://github.com/paper-leaf/waldo/blob/master/LICENSE.txt)*
 
 ##But Why *'Waldo'*?##
-Who's the character most well known for always being in the background? So the question here really should be: "Where's Waldo?" Get it? :D
+Who's the character most well known for always being in the background?
+
+So the question here really should be: "Where's Waldo?" Get it? :D
