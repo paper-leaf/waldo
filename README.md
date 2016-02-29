@@ -34,7 +34,7 @@ The default configuration and usage guidelines for Waldo are based on WordPress 
         ```
     3. Before each background image instance where Waldo is to generate styles, get the Advanced Custom Field image object, and store to a variable. Build styles and save to array by calling the function *waldoStylesArray()*. Pass in the ACF image object, a unique name (string) for this image section, the saved styles array, and a unique class name (string) for this section.
         ```php
-        $image = get_field('acf_image_name');
+        $image = get_field('acf_image_field_name');
 
         $waldo_styles = $waldo->waldoStylesArray($image, 'unique-section-name', $waldo_styles, 'unique-section-class-name');
         ```
