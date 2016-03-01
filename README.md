@@ -20,12 +20,12 @@ Add the image sizes supported by your theme and their associated min-width media
 ##How to Use Waldo##
 1. Copy **waldo-master** over to your WordPress theme.
 2. Include *waldo.php* somewhere in your *functions.php* file.
-3. Enqueue *waldo.css* in your *functions.php* file. Ensure the root path of this file is the same as the root path of the theme directory.
     ```php
     // load Waldo for dynamic responsive CSS background images
 
     include( 'waldo-master/waldo.php' );
     ```
+3. Enqueue *waldo.css* in your *functions.php* file. Ensure the root path of this file is the same as the root path of the theme directory.
 4. Integrate Waldo into your template files. Before each instance where Waldo is to generate background image styles, get the Advanced Custom Field image object, and store to a variable. Set variable $waldo_styles to the function *waldoStylesArray()* to build styles and save to array. Pass in the ACF image object, a unique name (string), the saved styles array, and a unique class name (string) for this section.
     ```php
     $image = get_field('acf_image_field_name');
