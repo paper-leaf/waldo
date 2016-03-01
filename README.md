@@ -21,32 +21,16 @@ Add the image sizes supported by your theme and their associated min-width media
 1. Copy **waldo-master** over to your WordPress theme.
 2. Include *waldo.php* somewhere in your *functions.php* file.
 3. Enqueue *waldo.css* in your *functions.php* file. Ensure the root path of this file is the same as the root path of the theme directory.
-4. Integrate Waldo into your template files. For each template that is to utilize Waldo:
-    1. After WP *get\_header();* create a new Waldo object.
-        ```php
-        get_header();
+    ```php
+    // load Waldo for dynamic responsive CSS background images
+    include( 'waldo-master/waldo.php' );
+    ```
+4. Integrate Waldo into your template files. Before each instance where Waldo is to generate background image styles, get the Advanced Custom Field image object, and store to a variable. Set variable $waldo_styles to the function *waldoStylesArray()* to build styles and save to array. Pass in the ACF image object, a unique name (string), the saved styles array, and a unique class name (string) for this section.
+    ```php
+    $image = get_field('acf_image_field_name');
 
-        $waldo = new Waldo();
-        ```
-    2. Set variable *$waldo\_styles* to the function *waldoSavedStyles()*. This fetches the saved styles array and stores it to the variable.
-        ```php
-        get_header();
-
-        $waldo = new Waldo;
-        $waldo_styles = $waldo->waldoSavedStyles();
-        ```
-    3. Before each instance where Waldo is to generate background image styles, get the Advanced Custom Field image object, and store to a variable. Build styles and save to array by calling the function *waldoStylesArray()*. Pass in the ACF image object, a unique name (string), the saved styles array, and a unique class name (string) for this section.
-        ```php
-        $image = get_field('acf_image_field_name');
-
-        $waldo_styles = $waldo->waldoStylesArray($image, 'unique-section-name', $waldo_styles, 'unique-section-class-name');
-        ```
-    4. Before WP *get\_footer();* call the function *waldoStyles()* to generate and save the updated *waldo.css* file.
-        ```php
-        $waldo->waldoStyles($waldo_styles);
-
-        get_footer();
-        ```
+    $waldo_styles = $waldo->waldoStylesArray($image, 'unique-section-name', $waldo_styles, 'unique-section-class-name');
+    ```
 5. Preload your site cache or click through the pages that utilize the affected template(s) and refresh to view updated responsive image styles.
 
 ##What it Does##

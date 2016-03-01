@@ -129,4 +129,32 @@
 
     }
 
+
+    /**
+     * init_waldo
+     * Creates a new waldo object and stores to global var $waldo. Calls $waldo->waldoSavedStyles() and stores returned array to global var $waldo_styles.
+     *
+     * @return null
+     */
+    function init_waldo() {
+        global $waldo, $waldo_styles;
+
+        $waldo = new Waldo();
+        $waldo_styles = $waldo->waldoSavedStyles();
+    }
+    add_action('wp_head', 'init_waldo', 99);
+
+    /**
+     * compile_waldo
+     * Calls $waldo->waldoStyles().
+     *
+     * @return null
+     */
+    function compile_waldo() {
+        global $waldo, $waldo_styles;
+
+        $waldo->waldoStyles($waldo_styles);
+    }
+    add_action('wp_footer', 'compile_waldo', 1);
+
 ?>
