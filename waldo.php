@@ -76,7 +76,7 @@
         public function waldoStylesArray($image, $section_label, $waldo_styles, $image_class){
             // add array with unique key to styles array
                 // when reloaded from server, this index will be overwritten (with new values, if applicable)
-            foreach ($this->waldo_sizes as $size_label => $size) {
+            foreach ( $this->waldo_sizes as $size_label => $size ) {
                 $waldo_styles[$section_label][$size_label] = "
                 ." .$image_class ." {
                         background-image: url('" .$image['sizes'][$size_label] ."');
@@ -101,15 +101,15 @@
             $waldo_style_content = ''; // build string to pass to waldo.css
             $template_dir = $this->template_dir; // locally store path to template directory
 
-            foreach ($this->waldo_sizes as $size_label => $size) {
-                if ($size == '') { // no 'min-width' media query required for default image size
-                    foreach ($waldo_styles as $waldo_style) {
+            foreach ( $this->waldo_sizes as $size_label => $size ) {
+                if ( $size == '' ) { // no 'min-width' media query required for default image size
+                    foreach ( $waldo_styles as $waldo_style ) {
                         $waldo_style_content .= $waldo_style[$size_label];
                     }
                 } else {
                     $waldo_style_content .= "@media (min-width: " .$size ."px) {";
 
-                    foreach ($waldo_styles as $waldo_style) {
+                    foreach ( $waldo_styles as $waldo_style ) {
                         $waldo_style_content .= $waldo_style[$size_label];
                     }
 
