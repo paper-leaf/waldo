@@ -15,6 +15,8 @@ The default configuration and usage guidelines for Waldo are based on WordPress 
 ##Configuration##
 Add the image sizes supported by your theme and their associated min-width media query values in the *waldo\_sizes* array found in *waldo.php*.
 
+*This is important, as the methods in class Waldo() rely on these key/value pairs to properly fetch image references and build the image styles.*
+
 *For more information on adding support for custom image sizes in WordPress, visit [here](https://developer.wordpress.org/reference/functions/add_image_size/).*
 
 ##How to Use Waldo##
