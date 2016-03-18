@@ -101,28 +101,30 @@
             $waldo_style_content = ''; // build string to pass to waldo.css
             $template_dir = $this->template_dir; // locally store path to template directory
 
-            foreach ( $this->waldo_sizes as $size_label => $mq_value ) {
-                if ( $mq_value == '' ) { // no 'min-width' media query required for default image size
-                    foreach ( $waldo_styles as $waldo_style ) {
-                        $waldo_style_content .= $waldo_style[$size_label];
-                    }
-                } else {
-                    $waldo_style_content .= "@media (min-width: " .$mq_value ."px) {";
+            if ( !empty($waldo_styles) ) { // ensure Waldo is being called in this template file
+                foreach ( $this->waldo_sizes as $size_label => $mq_value ) {
+                    if ( $mq_value == '' ) { // no 'min-width' media query required for default image size
+                        foreach ( $waldo_styles as $waldo_style ) {
+                            $waldo_style_content .= $waldo_style[$size_label];
+                        }
+                    } else {
+                        $waldo_style_content .= "@media (min-width: " .$mq_value ."px) {";
 
-                    foreach ( $waldo_styles as $waldo_style ) {
-                        $waldo_style_content .= $waldo_style[$size_label];
-                    }
+                        foreach ( $waldo_styles as $waldo_style ) {
+                            $waldo_style_content .= $waldo_style[$size_label];
+                        }
 
-                    $waldo_style_content .= "}";
+                        $waldo_style_content .= "}";
+                    }
                 }
+
+                // write styles to waldo.css
+                $waldo_style_content = preg_replace('/\s+/', '', $waldo_style_content); // comment out this line to render an un-minified style sheet
+                file_put_contents($template_dir .'/waldo.css', $waldo_style_content);
+
+                // write styles array to waldo-styles.php
+                file_put_contents($template_dir .'/waldo-styles.php', serialize($waldo_styles)); // serialize data - file_put_contents() has issues with multidimensional arrays
             }
-
-            // write styles to waldo.css
-            $waldo_style_content = preg_replace('/\s+/', '', $waldo_style_content); // comment out this line to render an un-minified style sheet
-            file_put_contents($template_dir .'/waldo.css', $waldo_style_content);
-
-            // write styles array to waldo-styles.php
-            file_put_contents($template_dir .'/waldo-styles.php', serialize($waldo_styles)); // serialize data - file_put_contents() has issues with multidimensional arrays
 
             return;
         }
