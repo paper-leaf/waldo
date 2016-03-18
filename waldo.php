@@ -74,14 +74,18 @@
          * @return array
          */
         public function waldoStylesArray($image, $section_label, $waldo_styles, $image_class){
-            // add array with unique key to styles array
-                // when reloaded from server, this index will be overwritten (with new values, if applicable)
-            foreach ( $this->waldo_sizes as $size_label => $mq_value ) {
-                $waldo_styles[$section_label][$size_label] = "
-                ." .$image_class ." {
-                        background-image: url('" .$image['sizes'][$size_label] ."');
-                    }
-                ";
+            if ( isset($image) ) {
+                // add array with unique key to styles array
+                    // when reloaded from server, this index will be overwritten (with new values, if applicable)
+                foreach ( $this->waldo_sizes as $size_label => $mq_value ) {
+                    $waldo_styles[$section_label][$size_label] = "
+                    ." .$image_class ." {
+                            background-image: url('" .$image['sizes'][$size_label] ."');
+                        }
+                    ";
+                }
+            } else { // remove image styles if the image has been removed
+                unset($waldo_styles[$section_label]);
             }
 
             return $waldo_styles;
