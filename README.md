@@ -13,10 +13,10 @@ The state of handling responsive images with regards to web development is in fl
 The default configuration and usage guidelines for Waldo are based on WordPress 4.4+ with Advanced Custom Fields 5.3+.
 
 Also include the following image sizes in your functions.php:
-    ```php
-       add_image_size('small', width, height);
-       add_image_size('xlarge', width, height);
-    ```
+```php
+add_image_size('small', width, height);
+add_image_size('xlarge', width, height);
+```
 Waldo uses a set of common breakpoints to determine the best image size and the above are missing, and essential to be set depending on your site.
 
 ##Configuration##
