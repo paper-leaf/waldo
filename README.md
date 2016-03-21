@@ -16,7 +16,7 @@ The default configuration and usage guidelines for Waldo are based on WordPress 
 This is built to handle ACF's Image Object which returns an associative array. If you are not using ACF the min-required array is:
 ```php
 array(1) {
-    ["sizes"]=>array(18) {
+    ["sizes"]=>array(12) {
         ["small"]=>string(75) "http://localhost/site/wp-content/uploads/2013/10/image_url-150x150.jpg"
         ["small-width"]=>int(150)
         ["small-height"]=>int(150)
