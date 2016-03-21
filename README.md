@@ -18,17 +18,9 @@ This is built to handle ACF's Image Object which returns an associative array. I
 array(1) {
     ["sizes"]=>array(12) {
         ["small"]=>string(75) "http://localhost/site/wp-content/uploads/2013/10/image_url-150x150.jpg"
-        ["small-width"]=>int(150)
-        ["small-height"]=>int(150)
         ["medium"]=>string(75) "http://localhost/site/wp-content/uploads/2013/10/image_url-300x225.jpg"
-        ["medium-width"]=>int(300)
-        ["medium-height"]=>int(225)
         ["large"]=>string(76) "http://localhost/site/wp-content/uploads/2013/10/image_url-1024x768.jpg"
-        ["large-width"]=>int(1024)
-        ["large-height"]=>int(768)
         ["xlarge"]=>string(76) "http://localhost/site/wp-content/uploads/2013/10/image_url-1024x768.jpg"
-        ["xlarge-width"]=>int(1024)
-        ["xlarge-height"]=>int(768)
     }
 }
 ```
