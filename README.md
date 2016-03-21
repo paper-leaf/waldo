@@ -33,6 +33,8 @@ array(1) {
 }
 ```
 
+###WordPress Image Sizes###
+
 Also include the following image sizes in your functions.php:
 ```php
 add_image_size('small', width, height);
