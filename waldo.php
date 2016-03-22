@@ -74,7 +74,7 @@
          * @return array
          */
         public function waldoStylesArray($image, $section_label, $waldo_styles, $image_class){
-            if ( $image ) {
+            if ( $image ) { // check if ACF image passed to $image
                 // add array with unique key to styles array
                     // when reloaded from server, this index will be overwritten (with new values, if applicable)
                 foreach ( $this->waldo_sizes as $size_label => $mq_value ) {

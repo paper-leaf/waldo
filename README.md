@@ -13,28 +13,28 @@ The state of handling responsive images with regards to web development is in fl
 The default configuration and usage guidelines for Waldo are based on WordPress 4.4+ with Advanced Custom Fields 5.3+.
 
 ###ACF Image Object###
-This is built to handle ACF's Image Object which returns an associative array. If you are not using ACF the min-required array is:
+Waldo is built to handle ACF's Image Object (which returns an associative array). If you are not using ACF, your image array should be formatted as follows:
 ```php
-array(1) {
-    ["sizes"]=>array(12) {
-        ["small"]=>string(75) "http://localhost/site/wp-content/uploads/2013/10/image_url-150x150.jpg"
-        ["medium"]=>string(75) "http://localhost/site/wp-content/uploads/2013/10/image_url-300x225.jpg"
-        ["large"]=>string(76) "http://localhost/site/wp-content/uploads/2013/10/image_url-1024x768.jpg"
-        ["xlarge"]=>string(76) "http://localhost/site/wp-content/uploads/2013/10/image_url-1024x768.jpg"
-    }
-}
+array(
+    ['sizes'] => array(
+        ['small']   => "*path to small image url*",
+        ['medium']  => "*path to medium image url*",
+        ['large']   => "*path to large image url*",
+        ['xlarge']  => "*path to xlarge image url*"
+    )
+);
 ```
 
 ###WordPress Image Sizes###
 
-Also include the following image sizes in your functions.php:
+Include the following image sizes in your *functions.php*:
 ```php
 add_image_size('small', width, height);
 add_image_size('xlarge', width, height);
 ```
-Waldo uses a set of common breakpoints to determine the best image size and the above are missing, and essential to be set depending on your site.
+Waldo uses a set of common breakpoints to determine the best image size. These image sizes are necessary for Waldo's default configuration to function correctly.
 
-##Configuration##
+##Custom Configuration##
 Add the image sizes supported by your theme and their associated min-width media query values in the *waldo\_sizes* array found in *waldo.php*.
 
 *This is important, as the methods in class Waldo() rely on these key/value pairs to properly fetch image references and build the image styles.*
