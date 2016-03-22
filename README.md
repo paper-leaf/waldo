@@ -17,10 +17,10 @@ Waldo is built to handle ACF's Image Object (which returns an associative array)
 ```php
 array(
     ['sizes'] => array(
-        ['small']   => "*path to small image url*",
-        ['medium']  => "*path to medium image url*",
-        ['large']   => "*path to large image url*",
-        ['xlarge']  => "*path to xlarge image url*"
+        ['small']   => "*small image url*",
+        ['medium']  => "*medium image url*",
+        ['large']   => "*large image url*",
+        ['xlarge']  => "*xlarge image url*"
     )
 );
 ```
