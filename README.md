@@ -15,7 +15,7 @@ The default configuration and usage guidelines for Waldo are based on WordPress 
 ###ACF Image Object###
 Waldo is built to handle ACF's Image Object (which returns an associative array). If you are not using ACF, your image array should be formatted as follows:
 ```php
-array(
+$image = array(
     'sizes' => array(
         'small'   => "*small image url*",
         'medium'  => "*medium image url*",
