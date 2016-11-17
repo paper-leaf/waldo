@@ -82,15 +82,16 @@ Add the image sizes supported by your theme and their associated min-width media
 
 -----
 *__Note:__ WordPress does not allow implicit global variable access within some files (__header.php__, __footer.php__, and some template/include files). In these cases, the global Waldo variables may need to be explicitly declared at the beginning of the file in question. This may be done in the following manner:*
-    ```php
-    global $waldo, $waldo_styles;
-    ```
 
-    or
+```php
+global $waldo, $waldo_styles;
+```
 
-    ```php
-    $waldo = $GLOBALS['waldo']; $waldo_styles = $GLOBALS['waldo_styles'];
-    ```
+or
+
+```php
+$waldo = $GLOBALS['waldo']; $waldo_styles = $GLOBALS['waldo_styles'];
+```
 
 
 ##What it Does##
