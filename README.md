@@ -51,19 +51,19 @@ Add the image sizes supported by your theme and their associated min-width media
     ```
 3. Enqueue *waldo.css* in your *functions.php* file. Ensure the root path of this file is the same as the root path of the theme directory. This file is dynamically generated when Waldo is called.
 4. Integrate Waldo into your template files.
-  1.Before each instance where Waldo is to generate background image styles, get the Advanced Custom Field image object, and store to a variable.
+  1. Before each instance where Waldo is to generate background image styles, get the Advanced Custom Field image object, and store to a variable.
     ```php
     // get ACF image object
 
     $image = get_field('acf_image_field_name');
     ```
-  2.Set variable $waldo_styles to the function *waldoStylesArray()* to build styles and save to array.
+  2. Set variable $waldo_styles to the function *waldoStylesArray()* to build styles and save to array.
     ```php
     // set var $waldo_styles to waldoStylesArray
 
     $waldo_styles = $waldo->waldoStylesArray();
     ```
-  3.Pass in the ACF image object, a unique name (string), the saved styles array, and a unique class name (string) for this section.
+  3. Pass in the ACF image object, a unique name (string), the saved styles array, and a unique class name (string) for this section.
     ```php
     // pass in parameters
 
@@ -91,7 +91,6 @@ Add the image sizes supported by your theme and their associated min-width media
     ```php
     $waldo = $GLOBALS['waldo']; $waldo_styles = $GLOBALS['waldo_styles'];
     ```
------
 
 
 ##What it Does##
