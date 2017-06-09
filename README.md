@@ -44,40 +44,50 @@ Add the image sizes supported by your theme and their associated min-width media
 ## How to Use Waldo ##
 1. Copy **waldo-master** over to your WordPress theme.
 2. Include *waldo.php* somewhere in your *functions.php* file.
+
     ```php
     // load Waldo for dynamic responsive CSS background images
 
     include('waldo-master/waldo.php');
     ```
+
 3. Enqueue *waldo.css* in your *functions.php* file. Ensure the root path of this file is the same as the root path of the theme directory. This file is dynamically generated when Waldo is called.
 4. Integrate Waldo into your template files.
   1. Before each instance where Waldo is to generate background image styles, get the Advanced Custom Field image object, and store to a variable.
+
     ```php
     // get ACF image object
 
     $image = get_field('acf_image_field_name');
     ```
+
   2. Set variable $waldo_styles to the function *waldoStylesArray()* to build styles and save to array.
+
     ```php
     // set var $waldo_styles to waldoStylesArray
 
     $waldo_styles = $waldo->waldoStylesArray();
     ```
+
   3. Pass in the ACF image object, a unique name (string), the saved styles array, and a unique class name (string) for this section.
+
     ```php
     // pass in parameters
 
     $waldo_styles = $waldo->waldoStylesArray($image, 'unique-section-name', $waldo_styles, 'unique-section-class-name');
     ```
+
     *The unique name may be the same as the unique section class name. The name is used as an array key for storage of style information in __waldo-styles.php__, whereas the class name is used to set the style selector for the rendered CSS in __waldo.css__.*
 
     ---
     *Complete code example (per Waldo instance):*
+
     ```php
     $image = get_field('acf_image_field_name');
 
     $waldo_styles = $waldo->waldoStylesArray($image, 'unique-section-name', $waldo_styles, 'unique-section-class-name');
     ```
+
 5. Preload your site cache or click through the pages that utilize the affected template(s) and refresh to view updated responsive image styles.
 
 -----
