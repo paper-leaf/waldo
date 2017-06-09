@@ -126,4 +126,4 @@ Follow [@paper_leaf](https://twitter.com/paper_leaf) on Twitter.
 ## But Why *'Waldo'*? ##
 Who's the character most well known for always being in the background?
 
-So the question here really should be: "Where's Waldo?" Get it? :D
+So the question here really should be: "Where's Waldo?" Get it? :laughing:
