@@ -128,6 +128,4 @@ Who's the character most well known for always being in the background?
 
 So the question here really should be: "Where's Waldo?" Get it? :laughing:
 
-_____
-
 ![](https://media.giphy.com/media/cTNGSvoW2YkxO/giphy.gif)
