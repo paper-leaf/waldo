@@ -51,7 +51,15 @@ Add the image sizes supported by your theme and their associated min-width media
     include('waldo-master/waldo.php');
     ```
 
-3. Enqueue *waldo.css* in your *functions.php* file. Ensure the root path of this file is the same as the root path of the theme directory. This file is dynamically generated when Waldo is called.
+3. Enqueue *waldo.css* in your *functions.php* file. Ensure the root path of this file is the same as the root path of the theme directory. This file is dynamically generated when Waldo is called. Best practice is to load this stylesheet in the footer to ensure that any styles generated on page load are displayed properly.
+
+    ```php
+        function add_waldo_css() {
+            echo '<link rel="stylesheet" id="waldo-css" href="' .get_template_directory_uri() .'/waldo.css">';
+        }
+        add_action('wp_footer', 'add_waldo_css');
+    ```
+
 4. Integrate Waldo into your template files.
     1. Before each instance where Waldo is to generate background image styles, get the Advanced Custom Field image object, and store to a variable.
 
